@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> the perfect master's project <3 </title>
+    <style>
+        body {
+            font-family: Courier, monospace;
+            text-align: center;
+            margin-top: 300px;
+        }
+        #sentence {
+            margin-top: 20px;
+            font-size: 20px;
+        }      
+    </style>
+</head>
+<body>
+    <h1> the perfect master's project <3 </h1>
+    <button onclick="generateProjectIdea()">Generate New Project Idea</button>
+    <div id="sentence"></div>
+
+    <script>
+        // Data arrays extracted from the CSV file
+        const groups = [
+            "women + AFAB people",
+            "queer + trans people",
+            "fat people",
+            "people with disabilities (visible + invisible)",
+            "people with chronic illnesses",
+            "people who experience language barriers",
+            "BIPOC +/or BIPOC women",
+            "remote workers",
+            "young people (teens)",
+            "young people (college age)",
+            "young people (24-30)",
+            "students",
+            "1st generation folks",
+            "spinal cord injury (SCI) patients",
+            "people with addictions",
+            "people with body image issues (or higher likelihood of body image issues)"
+        ];
+
+        const activities = [
+            "fitness",
+            "running + walking",
+            "yoga + mindfulness",
+            "SEX",
+            "parenting",
+            "working",
+            "outdoor + adventure activities",
+            "hobby + creative arts",
+            "making friends + communities",
+            "therapy/ health management",
+            "maintaining relationships",
+            "academics",
+            "dating",
+            "urinating",
+            "cooking"
+        ];
+
+        const contexts = [
+            "home",
+            "work (office)",
+            "gym",
+            "outdoors",
+            "commute (car)",
+            "commute (public transit)",
+            "restaurants / Cafes",
+            "Museums",
+            "therapist's office",
+            "doctor's office",
+            "bathroom",
+            "kitchen",
+            "rehab",
+            "bathing"
+        ];
+
+        const techs = [
+            "smart and connected home",
+            "IoT",
+            "smart and connected health",
+            "biofeedback devices",
+            "wearables",
+            "smart fabrics and wearable sensors",
+            "mobile health apps",
+            "social platforms for wellness/fitness",
+            "analog products"
+        ];
+
+        // Function to get a random element from an array
+        function getRandomElement(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        // Function to generate a random project idea
+        function generateProjectIdea() {
+            const group = getRandomElement(groups);
+            const activity = getRandomElement(activities);
+            const context = getRandomElement(contexts);
+            const tech = getRandomElement(techs);
+            const sentence = `Create a project for ${group} involving ${activity} in ${context} using ${tech}.`;
+            document.getElementById("sentence").innerText = sentence;
+        }
+    </script>
+</body>
+</html>
